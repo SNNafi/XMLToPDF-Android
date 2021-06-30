@@ -6,7 +6,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Paint
 import android.graphics.pdf.PdfDocument
 import android.graphics.pdf.PdfDocument.PageInfo
 import android.net.Uri
@@ -18,6 +17,7 @@ import android.print.pdf.PrintedPdfDocument
 import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -36,19 +36,22 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (checkSelfPermission(
-                REQUESTED_PERMISSIONS.get(
-                    0
-                ), PERMISSION_REQ_ID
-            ) &&
-            checkSelfPermission(
-                REQUESTED_PERMISSIONS.get(
-                    1
-                ), PERMISSION_REQ_ID
-            )
-        ) {
-            Toast.makeText(this, "GRANTED", Toast.LENGTH_LONG).show()
-            pdfGenerate()
+
+        findViewById<ImageView>(R.id.image).setOnClickListener {
+            if (checkSelfPermission(
+                    REQUESTED_PERMISSIONS.get(
+                        0
+                    ), PERMISSION_REQ_ID
+                ) &&
+                checkSelfPermission(
+                    REQUESTED_PERMISSIONS.get(
+                        1
+                    ), PERMISSION_REQ_ID
+                )
+            ) {
+                Toast.makeText(this, "GRANTED", Toast.LENGTH_LONG).show()
+                pdfGenerate()
+            }
         }
 
 
@@ -101,8 +104,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
     fun pdfGenerate() {
         val printAttrs = PrintAttributes.Builder().setColorMode(PrintAttributes.COLOR_MODE_COLOR)
             .setMediaSize(PrintAttributes.MediaSize.ISO_A4)
@@ -128,8 +129,9 @@ class MainActivity : AppCompatActivity() {
         // create a new page from the PageInfo
         val page: PdfDocument.Page = document.startPage(pageInfo)
         val canvas = page.canvas
-        val paint = Paint()
-        canvas.drawBitmap(logo, 56f, 40f, paint) // axis
+        // For drawing image directly
+//        val paint = Paint()
+//        canvas.drawBitmap(logo, 56f, 40f, paint) // axis
         v.draw(canvas)
 
         document.finishPage(page)
@@ -169,7 +171,7 @@ class MainActivity : AppCompatActivity() {
                 try {
                     applicationContext.startActivity(intent)
                 } catch (e: ActivityNotFoundException) {
-                           Log.d(LOG_TAG, e.localizedMessage)
+                    Log.d(LOG_TAG, e.localizedMessage)
                 }
             } else {
 
