@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/parent"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Oganesson"
+            android:textColor="@color/black"
+            android:textSize="29sp"
+            android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:padding="10dp"
+        tools:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="441dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:text="@string/oganesson" />
+
+        <LinearLayout
+            android:id="@+id/properties"
+            android:layout_width="441dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/info"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="441dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:padding="15dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="Discovered: " />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:padding="15dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="2002" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="441dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:padding="15dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="Origin: " />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:padding="15dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="Russsia" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="441dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:padding="15dp" android:textSize="12sp"
+                    android:text="Atomic Number: "
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:padding="15dp"
+                    android:textSize="12sp"
+                    android:text="118"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="441dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:padding="15dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="Atomic Weight: " />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:padding="15dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="294" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="441dp"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                android:paddingStart="3dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="3dp"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingBottom="5dp" />
+
+            <LinearLayout
+                android:layout_width="441dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:padding="15dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:text="Anything More: " />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:padding="15dp"
+                    android:textSize="12sp"
+                    android:autoLink="web"
+                    android:textColor="@color/black"
+                    android:text="https://en.wikipedia.org/wiki/Oganesson" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
